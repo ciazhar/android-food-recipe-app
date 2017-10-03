@@ -17,7 +17,9 @@ import com.ciazhar.recipeapp.model.Food
 * [ Documentation Here]
 */
 
-class FoodAdapter constructor(private var context : Context, private var foodList : ArrayList<Food>) : RecyclerView.Adapter<FoodAdapter.FoodView>() {
+class FoodAdapter (private var context : Context, private var foodList : ArrayList<Food>)
+    : RecyclerView.Adapter<FoodAdapter.FoodView>() {
+
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): FoodView {
         val view : View = LayoutInflater.from(parent?.context)
                 .inflate(R.layout.layout_food_data,parent,false)

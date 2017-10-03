@@ -1,6 +1,8 @@
 package com.ciazhar.recipeapp
 
 import android.content.Context
+import android.content.Intent
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +29,14 @@ class FoodAdapter constructor(private var context : Context, private var foodLis
         holder?.foodName?.text = data.foodName
         holder?.foodImage?.setImageResource(data.foodImage)
         holder?.foodDescription?.text = data.foodDescription
+        holder?.cardView?.setOnClickListener({
+            var intent = Intent(context, FoodDetailActivity::class.java )
+            intent.putExtra("food.name",data.foodName)
+            intent.putExtra("food.description",data.foodDescription)
+            intent.putExtra("food.image",data.foodImage)
+            context.startActivity(intent)
+        })
+
     }
 
     override fun getItemCount(): Int = foodList.size
@@ -35,10 +45,11 @@ class FoodAdapter constructor(private var context : Context, private var foodLis
         var foodName : TextView?=null
         var foodImage : ImageView?=null
         var foodDescription : TextView?=null
-
+        var cardView : CardView?=null
         init {
             foodName = view.findViewById(R.id.food_name) as TextView
             foodImage = view.findViewById(R.id.food_image) as ImageView
+            cardView = view.findViewById(R.id.food_card_view) as CardView
         }
     }
 }

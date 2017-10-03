@@ -10,7 +10,7 @@ class FoodDetailActivity : AppCompatActivity() {
 
     var foodName: TextView ?= null
     var foodImage: ImageView ?= null
-    var foodDescription: TextView ?= null
+    var foodRecipe: TextView ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,13 +18,13 @@ class FoodDetailActivity : AppCompatActivity() {
 
         foodName = findViewById(R.id.food_detail_name) as TextView
         foodImage = findViewById(R.id.food_detail_image) as ImageView
-        foodDescription= findViewById(R.id.food_detail_description) as TextView
+        foodRecipe= findViewById(R.id.food_detail_recipe) as TextView
 
         var intent : Intent = intent
 
         foodName!!.text = intent.getStringExtra("food.name")
         foodImage!!.setImageResource(intent.getIntExtra("food.image",0))
-        foodDescription!!.text = intent.getStringExtra("food.description")
+        foodRecipe!!.text = intent.getStringExtra("food.recipe")
     }
 }
 

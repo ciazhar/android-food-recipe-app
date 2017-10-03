@@ -29,11 +29,12 @@ class FoodAdapter constructor(private var context : Context, private var foodLis
         holder?.foodName?.text = data.foodName
         holder?.foodImage?.setImageResource(data.foodImage)
         holder?.foodDescription?.text = data.foodDescription
+        holder?.foodRecipe?.text = data.foodRecipe
         holder?.cardView?.setOnClickListener({
-            var intent = Intent(context, FoodDetailActivity::class.java )
+            val intent = Intent(context, FoodDetailActivity::class.java )
             intent.putExtra("food.name",data.foodName)
-            intent.putExtra("food.description",data.foodDescription)
             intent.putExtra("food.image",data.foodImage)
+            intent.putExtra("food.recipe",data.foodRecipe)
             context.startActivity(intent)
         })
 
@@ -45,10 +46,11 @@ class FoodAdapter constructor(private var context : Context, private var foodLis
         var foodName : TextView?=null
         var foodImage : ImageView?=null
         var foodDescription : TextView?=null
+        var foodRecipe : TextView?=null
         var cardView : CardView?=null
         init {
             foodName = view.findViewById(R.id.food_name) as TextView
-            foodImage = view.findViewById(R.id.food_image) as ImageView
+            foodDescription = view.findViewById(R.id.food_description) as TextView
             cardView = view.findViewById(R.id.food_card_view) as CardView
         }
     }

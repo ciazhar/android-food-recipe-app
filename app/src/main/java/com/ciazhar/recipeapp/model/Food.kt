@@ -9,5 +9,6 @@ package com.ciazhar.recipeapp.model
 data class Food(
         var foodName : String,
         var foodImage : Int,
-        var foodDescription : String
+        var foodDescription : String,
+        var foodRecipe : String
 )

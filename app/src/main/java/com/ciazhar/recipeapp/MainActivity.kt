@@ -51,6 +51,41 @@ class MainActivity : AppCompatActivity() {
                 foodDescription = "Lorem Ipsum3 Description"
             )
         )
+        foodList.add(
+            Food(
+                foodName = "Lorem Ipsum4",
+                foodImage = R.drawable.food,
+                foodDescription = "Lorem Ipsum4 Description"
+            )
+        )
+        foodList.add(
+            Food(
+                foodName = "Lorem Ipsum5",
+                foodImage = R.drawable.food,
+                foodDescription = "Lorem Ipsum5 Description"
+            )
+        )
+        foodList.add(
+            Food(
+                foodName = "Lorem Ipsum6",
+                foodImage = R.drawable.food,
+                foodDescription = "Lorem Ipsum6 Description"
+            )
+        )
+        foodList.add(
+            Food(
+                foodName = "Lorem Ipsum7",
+                foodImage = R.drawable.food,
+                foodDescription = "Lorem Ipsum7 Description"
+            )
+        )
+        foodList.add(
+            Food(
+                foodName = "Lorem Ipsum8",
+                foodImage = R.drawable.food,
+                foodDescription = "Lorem Ipsum8 Description"
+            )
+        )
         foodAdapter?.notifyDataSetChanged()
     }
 }
